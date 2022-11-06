@@ -1,0 +1,99 @@
+﻿<Page x:Class="FinalProject.SingleStateCovid"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FinalProject"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SingleStateCovid">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Grid.Row="0" Margin="6" Click="Return_Click" Width="100" HorizontalAlignment="Left">Return Home</Button>
+            <Menu Name="casesOrDeaths" Margin="6">
+                <MenuItem Header="Select Cases or Deaths">
+                    <MenuItem Header="Cases" IsCheckable="True" Checked="State_Checked"/>
+                    <MenuItem Header="Deaths" IsCheckable="True" Checked="State_Checked"/>
+                    <MenuItem Header="Cases per Death" IsCheckable="True" Checked="State_Checked"/>
+                </MenuItem>
+            </Menu>
+            <Menu Name="stateSelector" Margin="6">
+                <MenuItem Header="Select State">
+                    <MenuItem Header="Alabama" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Alaska" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Arizona" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Arkansas" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="California" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Colorado" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Connecticut" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Delaware" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Florida" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Georgia" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Hawaii" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Idaho" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Illinois" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Indiana" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Iowa" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Kansas" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Kentucky" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Louisiana" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Maine" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Maryland" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Massachusetts" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Michigan" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Minnesota" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Mississippi" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Missouri" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Montana" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Nebraska" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Nevada" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="New Hampshire" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="New Jersey" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="New Mexico" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="New York" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="North Carolina" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="North Dakota" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Ohio" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Oklahoma" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Oregon" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Pennsylvania" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Rhode Island" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="South Carolina" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="South Dakota" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Tennessee" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Texas" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Utah" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Vermont" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Virginia" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Washington" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="West Virginia" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Wisconsin" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Wyoming" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="American Samoa" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Guam" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Northern Mariana Islands" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Puerto Rico" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                    <MenuItem Header="Virgin Islands" IsCheckable="True" Checked="State_Checked" Unchecked="State_UnChecked"/>
+                </MenuItem>
+            </Menu>
+            <Button Margin="6" Click="Visualize_Click" Width="80">Visualize</Button>
+            <Button Margin="6" Click="Display_Query" Width="120">Display Query</Button>
+            <TextBlock Name="queryResponse" TextWrapping="Wrap" Text="" FontSize="16"/>
+        </StackPanel>
+
+        <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Margin="40,0,72,50" Grid.Row="1" >
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis FontSize="12" Title="{Binding TitleFormatter}" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis FontSize="16" Title="{Binding XTitleFormatter}" Labels="{Binding Labels}"></lvc:Axis>
+            </lvc:CartesianChart.AxisX>
+        </lvc:CartesianChart>
+    </Grid>
+</Page>

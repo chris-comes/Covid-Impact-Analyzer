@@ -1,1 +1,1 @@
-# Covid-Impact-Analyzer
+# Covid Impact Analyzer
